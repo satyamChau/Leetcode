@@ -93,7 +93,7 @@ struct Node
 
 class Solution {
   private:
-     int height(struct Node* node){
+     int height( Node* node){
         
         if(node==NULL){
             return 0;
