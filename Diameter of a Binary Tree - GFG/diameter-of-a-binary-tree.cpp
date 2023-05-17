@@ -92,29 +92,39 @@ struct Node
 }; */
 
 class Solution {
-  private:
-     int height( Node* node){
+//   private:
+//      int height( Node* node){
         
-        if(node==NULL){
-            return 0;
-        }
-        int left = height(node->left);
-        int right = height(node->right);
-        int ans = max(left, right)+1;
-        return ans;
-    }
+//         if(node==NULL){
+//             return 0;
+//         }
+//         int left = height(node->left);
+//         int right = height(node->right);
+//         int ans = max(left, right)+1;
+//         return ans;
+//     }
   public:
+  pair<int,int>solve(Node*root){
+      if(root==NULL){
+          pair<int,int>p = make_pair(0,0);
+          return p;
+      }
+      pair<int,int>left = solve(root->left);
+      pair<int,int>right = solve(root->right);
+      
+      int a1 = left.first;
+      int a2 = right.first;
+      int a3 = left.second + right.second +1;
+      
+      pair<int,int>ans;
+      ans.first = max(a1, max(a2,a3));
+      ans.second = max(left.second, right.second) +1;
+      return ans;
+  }
     // Function to return the diameter of a Binary Tree.
     int diameter(Node* root) {
         // Your code here
-        if(root==NULL){
-            return 0;
-        }
-        int ans1 = diameter(root->left);
-        int ans2 = diameter(root->right);
-        int finalans = height(root->left) + height(root->right) + 1;
-        int ans = max(ans1, max(ans2, finalans));
-        return ans;
+        return solve(root).first;
     }
 };
 
