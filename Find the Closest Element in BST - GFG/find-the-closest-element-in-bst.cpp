@@ -40,11 +40,11 @@ class Solution
     int minDiff(Node *root, int K)
     {
        if(root==NULL)
-           return 1e9;
+           return INT_MAX;
        if(root->data==K)
           return 0;
           
-         int left=1e9,right=1e9;
+         int left=INT_MAX,right=INT_MAX;
          if(K<root->data)
             left = minDiff(root->left,K);
          else
