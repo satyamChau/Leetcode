@@ -41,7 +41,7 @@ public:
         }
         if(total & 1)
           return 0;
-        int target = total/2;
+        // int target = total/2;
         return sol(N,arr,total);
     }
 };
