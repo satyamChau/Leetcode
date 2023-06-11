@@ -11,7 +11,7 @@ class Solution {
     // Program for zig-zag conversion of array
     void zigZag(int a[], int n) {
         int temp;
-        for(int i=0;i<n-1;i++){
+        for(int i=0;i<n;i++){
             if(i%2==0 && a[i]>a[i+1]){
                 
                 swap(a[i],a[i+1]);
