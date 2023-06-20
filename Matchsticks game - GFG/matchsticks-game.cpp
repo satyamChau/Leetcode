@@ -8,6 +8,10 @@ class Solution {
     int matchGame(long long N) {
         // code here
         return(N%5==0)?-1:N%5;
+        // if(N%5==0){
+        //     return -1;
+        // }
+        // return N%5;
            
     }
 };
